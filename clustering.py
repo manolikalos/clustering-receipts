@@ -94,13 +94,3 @@ sample_df['kmeans_cluster_name'] = sample_df['kmeans_cluster'].map(cluster_names
 sample_df['agglomerative_cluster'] = cluster_labels_agglomerative
 cluster_names_dict = {label: name for label, name in zip(range(len(cluster_names_agglomerative)), cluster_names_agglomerative)}
 sample_df['agglomerative_cluster_name'] = sample_df['agglomerative_cluster'].map(cluster_names_dict)
-
-np.save('cluster_labels_kmeans.npy', cluster_labels_kmeans)
-
-np.save('cluster_names_kmeans.npy', cluster_names_kmeans)
-
-np.save('vectorizer_vocabulary.npy', vectorizer.get_feature_names_out())
-
-np.save('cluster_labels_agglomerative.npy', cluster_labels_agglomerative)
-
-np.save('cluster_names_agglomerative.npy', cluster_names_agglomerative)
