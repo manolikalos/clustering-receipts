@@ -1,10 +1,12 @@
-# KBClustering.py
+# Clustering and classifying new items in receipt DataFrame
 
-**This script provides functions for data clustering using various techniques and associating items with clusters. It utilizes the sentence-transformers library for encoding textual data and the scikit-learn library for clustering algorithms. The script also makes use of other libraries such as pandas, numpy, matplotlib, and re.**
+## KBClustering.py
+
+**This script provides functions for data clustering using various techniques and associating items with clusters. It utilizes the sentence-transformers library for encoding textual data and the scikit-learn library for clustering algorithms. The script also makes use of other libraries such as pandas, numpy, matplotlib, and re. It is used to treat dataframes of receipt informations.**
 
 ### Functions
 
-1. prepare_clustering(csv_path)
+**1. prepare_clustering(csv_path)**
 
 This function prepares the data and executes clusterings using both kmeans and agglomerative methods.
 
@@ -22,7 +24,7 @@ Returns:
 - cluster_names_dict_kmeans: A dictionary mapping cluster labels to their corresponding names for K-means clustering.
 - cluster_names_dict: A dictionary mapping cluster labels to their corresponding names for Agglomerative clustering.
 
-2. preprocess_text(text)
+**2. preprocess_text(text)**
 
 This function preprocesses the given text by removing numerical digits, stripping leading/trailing whitespace, and converting it to lowercase.
 It will be used in the associate_item_with_cluster function.
@@ -35,7 +37,7 @@ Returns:
 
 - The preprocessed text.
 
-3. associate_item_with_cluster(item, sample_df, model, kmeans, agglomerative)
+**3. associate_item_with_cluster(item, sample_df, model, kmeans, agglomerative)**
 
 This function associates a new item with clusters.
 
@@ -51,7 +53,7 @@ Returns:
 
 - sample_df: The updated DataFrame with the added item and updated cluster labels.
 
-4. generate_random_item(df)
+**4. generate_random_item(df)**
 
 This function generates a random item from the given DataFrame.
 
