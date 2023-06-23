@@ -23,13 +23,13 @@ import pandas as pd
 import kbclustering
 
 # Prepare clustering
-sample_df, model, itemdescription_embeddings, cluster_labels_agglomerative, cluster_names_dict_agglomerative = clustering.prepare_clustering('data.csv')
+sample_df, model, itemdescription_embeddings, cluster_labels_agglomerative, cluster_names_dict_agglomerative = kbclustering.prepare_clustering('data.csv')
 
 # Generate a random item
-random_item = clustering.get_random_item_from_test_set(df)
+random_item = kbclustering.get_random_item_from_test_set(df)
 
 # Associate the random item with clusters
-sample_df = clustering.associate_item_with_agglomerative_cluster(item, sample_df, model, itemdescription_embeddings, cluster_labels_agglomerative, cluster_names_dict_agglomerative)
+sample_df = kbclustering.associate_item_with_agglomerative_cluster(item, sample_df, model, itemdescription_embeddings, cluster_labels_agglomerative, cluster_names_dict_agglomerative)
 
 ```
 
