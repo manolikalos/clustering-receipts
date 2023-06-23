@@ -10,10 +10,10 @@
 
 ### Functions
 
-- prepare_clustering(csv_path): This function reads the CSV file, cleans the data, applies KMeans and Agglomerative clustering, assigns each record to a cluster, and determines the name of each cluster based on the most common words in that cluster.
-- preprocess_text(text): This function performs text preprocessing such as removing digits, stripping leading and trailing whitespaces, and converting the text to lowercase.
-- associate_item_with_agglomerative_cluster(item, sample_df, model, itemdescription_embeddings, cluster_labels_agglomerative, cluster_names_dict_agglomerative): This function associates a new item with the existing agglomerative clusters using a handmade KNN Classifier.
-- get_random_item_from_test_set(df): This function fetches a random item from the dataset, excluding items from the training set.
+- `prepare_clustering(csv_path)`: This function reads the CSV file, cleans the data, applies KMeans and Agglomerative clustering, assigns each record to a cluster, and determines the name of each cluster based on the most common words in that cluster.
+- `preprocess_text(text)`: This function performs text preprocessing such as removing digits, stripping leading and trailing whitespaces, and converting the text to lowercase.
+- `associate_item_with_agglomerative_cluster(item, sample_df, model, itemdescription_embeddings, cluster_labels_agglomerative, cluster_names_dict_agglomerative)`: This function associates a new item with the existing agglomerative clusters using a handmade KNN Classifier.
+- `get_random_item_from_test_set(df)`: This function fetches a random item from the dataset, excluding items from the training set.
 
 ### Example Usage
 
@@ -23,13 +23,13 @@ import pandas as pd
 import kbclustering
 
 # Prepare clustering
-sample_df, model, kmeans, agglomerative, cluster_names_kmeans, cluster_names_agglomerative = clustering.prepare_clustering('data.csv')
+sample_df, model, itemdescription_embeddings, cluster_labels_agglomerative, cluster_names_dict_agglomerative = clustering.prepare_clustering('data.csv')
 
 # Generate a random item
 random_item = clustering.generate_random_item(sample_df)
 
 # Associate the random item with clusters
-sample_df = clustering.associate_item_with_cluster(random_item, sample_df, model, kmeans, agglomerative)
+sample_df = clustering.associate_item_with_cluster(item, sample_df, model, itemdescription_embeddings, cluster_labels_agglomerative, cluster_names_dict_agglomerative)
 
 ```
 
