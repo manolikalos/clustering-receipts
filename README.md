@@ -79,7 +79,7 @@ random_item = clustering.generate_random_item(sample_df)
 # Associate the random item with clusters
 sample_df = clustering.associate_item_with_cluster(random_item, sample_df, model, kmeans, agglomerative)
 
-```python
+```
 
 Note: Replace 'data.csv' with the actual path to your CSV file containing the data.
 
