@@ -1,5 +1,9 @@
 # Clustering and classifying new items in receipt DataFrame
 
+## KillBillsClusteringNB.ipynb
+
+**This notebook goes through the research process of making the kbclustering.py script and explains the code.
+
 ## KBClustering.py
 
 **This script provides functions for data clustering using various techniques and associating items with clusters. It utilizes the sentence-transformers library for encoding textual data and the scikit-learn library for clustering algorithms. The script also makes use of other libraries such as pandas, numpy, matplotlib, and re. It is used to treat dataframes of receipt informations.**
@@ -86,3 +90,4 @@ sample_df = clustering.associate_item_with_cluster(random_item, sample_df, model
 Note: Replace 'data.csv' with the actual path to your CSV file containing the data.
 
 Make sure to install the required libraries mentioned in the script and have the necessary data file before running the code.
+
