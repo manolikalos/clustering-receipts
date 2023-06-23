@@ -43,7 +43,7 @@ Returns:
 
 **3. associate_item_with_cluster(item, sample_df, model, kmeans, agglomerative)**
 
-This function associates a new item with clusters.
+This function associates a new item with clusters, and add the item to the DataFrame.
 
 Parameters:
 
@@ -55,7 +55,7 @@ Parameters:
 
 Returns:
 
-- sample_df: The updated DataFrame with the added item and updated cluster labels.
+- agglomerative_cluster_label, agglomerative_cluster_name : Cluster label and name of the given item.
 
 **4. generate_random_item(df)**
 
