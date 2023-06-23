@@ -2,7 +2,7 @@
 
 ## KillBillsClusteringNB.ipynb
 
-**This notebook goes through the research process of making the kbclustering.py script and explains the code.
+**This notebook goes through the research process of making the kbclustering.py script and explains the code.**
 
 ## KBClustering.py
 
