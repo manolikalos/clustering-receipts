@@ -29,11 +29,11 @@ It will be used in the associate_item_with_cluster function.
 
 Parameters:
 
-    text: The text to be preprocessed.
+- text: The text to be preprocessed.
 
 Returns:
 
-    The preprocessed text.
+- The preprocessed text.
 
 3. associate_item_with_cluster(item, sample_df, model, kmeans, agglomerative)
 
@@ -41,15 +41,15 @@ This function associates a new item with clusters.
 
 Parameters:
 
-    item: A dictionary representing the item with the following keys: 'description', 'amount', 'taxRate'.
-    sample_df: The DataFrame containing the sampled data with existing cluster labels.
-    model: The SentenceTransformer model used for encoding text.
-    kmeans: The trained KMeans clustering model.
-    agglomerative: The trained AgglomerativeClustering model.
+- item: A dictionary representing the item with the following keys: 'description', 'amount', 'taxRate'.
+- sample_df: The DataFrame containing the sampled data with existing cluster labels.
+- model: The SentenceTransformer model used for encoding text.
+- kmeans: The trained KMeans clustering model.
+- agglomerative: The trained AgglomerativeClustering model.
 
 Returns:
 
-    sample_df: The updated DataFrame with the added item and updated cluster labels.
+- sample_df: The updated DataFrame with the added item and updated cluster labels.
 
 4. generate_random_item(df)
 
@@ -57,15 +57,15 @@ This function generates a random item from the given DataFrame.
 
 Parameters:
 
-    df: The DataFrame containing the data.
+- df: The DataFrame containing the data.
 
 Returns:
 
-    The randomly selected item as a dictionary.
+- The randomly selected item as a dictionary.
 
 ### Example Usage
 
-python
+```python 
 
 import pandas as pd
 import kbclustering
@@ -78,6 +78,8 @@ random_item = clustering.generate_random_item(sample_df)
 
 # Associate the random item with clusters
 sample_df = clustering.associate_item_with_cluster(random_item, sample_df, model, kmeans, agglomerative)
+
+```python
 
 Note: Replace 'data.csv' with the actual path to your CSV file containing the data.
 
