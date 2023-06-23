@@ -26,14 +26,18 @@ import kbclustering
 sample_df, model, itemdescription_embeddings, cluster_labels_agglomerative, cluster_names_dict_agglomerative = clustering.prepare_clustering('data.csv')
 
 # Generate a random item
-random_item = clustering.generate_random_item(sample_df)
+random_item = clustering.generate_random_item(df)
 
 # Associate the random item with clusters
 sample_df = clustering.associate_item_with_cluster(item, sample_df, model, itemdescription_embeddings, cluster_labels_agglomerative, cluster_names_dict_agglomerative)
 
 ```
 
-Note: Replace 'data.csv' with the actual path to your CSV file containing the data.
+Note: Replace 'data.csv' with the actual path to your CSV file containing the data. To use random_item you have to load your data first with
+
+```
+df = pd.read_csv(data.csv)
+```
 
 Make sure to install the required libraries mentioned in the script and have the necessary data file before running the code.
 
