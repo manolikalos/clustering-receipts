@@ -10,64 +10,13 @@
 
 ### Functions
 
-**1. prepare_clustering(csv_path)**
+    - prepare_clustering(csv_path): This function reads the CSV file, cleans the data, applies KMeans and Agglomerative clustering, assigns each record to a cluster, and determines the name of each cluster based on the most common words in that cluster.
 
-This function prepares the data and executes clusterings using both kmeans and agglomerative methods.
+    - preprocess_text(text): This function performs text preprocessing such as removing digits, stripping leading and trailing whitespaces, and converting the text to lowercase.
 
+    - associate_item_with_agglomerative_cluster(item, sample_df, model, itemdescription_embeddings, cluster_labels_agglomerative, cluster_names_dict_agglomerative): This function associates a new item with the existing agglomerative clusters using a handmade KNN Classifier.
 
-Parameters:
-
-- csv_path: The file path to the CSV file containing the data.
-
-Returns:
-
-- sample_df: A DataFrame containing the sampled data with added cluster labels and cluster names.
-- model: The SentenceTransformer model used for encoding text.
-- kmeans: The trained KMeans clustering model.
-- agglomerative: The trained AgglomerativeClustering model.
-- cluster_names_dict_kmeans: A dictionary mapping cluster labels to their corresponding names for K-means clustering.
-- cluster_names_dict: A dictionary mapping cluster labels to their corresponding names for Agglomerative clustering.
-
-**2. preprocess_text(text)**
-
-This function preprocesses the given text by removing numerical digits, stripping leading/trailing whitespace, and converting it to lowercase.
-It will be used in the associate_item_with_cluster function.
-
-Parameters:
-
-- text: The text to be preprocessed.
-
-Returns:
-
-- The preprocessed text.
-
-**3. associate_item_with_cluster(item, sample_df, model, kmeans, agglomerative)**
-
-This function associates a new item with clusters, and add the item to the DataFrame.
-
-Parameters:
-
-- item: A dictionary representing the item with the following keys: 'description', 'amount', 'taxRate'.
-- sample_df: The DataFrame containing the sampled data with existing cluster labels.
-- model: The SentenceTransformer model used for encoding text.
-- kmeans: The trained KMeans clustering model.
-- agglomerative: The trained AgglomerativeClustering model.
-
-Returns:
-
-- agglomerative_cluster_label, agglomerative_cluster_name : Cluster label and name of the given item.
-
-**4. generate_random_item(df)**
-
-This function generates a random item from the given DataFrame.
-
-Parameters:
-
-- df: The DataFrame containing the data.
-
-Returns:
-
-- The randomly selected item as a dictionary.
+    - get_random_item_from_test_set(df): This function fetches a random item from the dataset, excluding items from the training set.
 
 ### Example Usage
 
